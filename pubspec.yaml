@@ -1,7 +1,7 @@
 name: flutter_jd_address_selector
-description: 仿京东地址选择器
+description: JD Address Selector Plugin
 version: 0.0.1
-author: 师春雷 <1558053958@qq.com>
+author: SCL <1543289412@qq.com>
 homepage: https://github.com/shichunlei/flutter_jd_address_selector
 
 environment:
