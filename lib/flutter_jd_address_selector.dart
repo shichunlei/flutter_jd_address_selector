@@ -35,7 +35,7 @@ class JDAddressDialog extends StatefulWidget {
 }
 
 class _JDAddressDialogState extends State<JDAddressDialog>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   int _index = 0;
 
   TabController _tabController;
@@ -53,6 +53,8 @@ class _JDAddressDialogState extends State<JDAddressDialog>
 
   /// 三级联动选择的position
   var _positions = [0, 0, 0];
+
+  double itemHeight = 48.0;
 
   @override
   void initState() {
@@ -120,7 +122,7 @@ class _JDAddressDialogState extends State<JDAddressDialog>
                         }
                         setState(() {
                           _index = index;
-                          _controller.animateTo(_positions[_index] * 48.0,
+                          _controller.animateTo(_positions[_index] * itemHeight,
                               duration: Duration(milliseconds: 10),
                               curve: Curves.ease);
                         });
@@ -156,7 +158,7 @@ class _JDAddressDialogState extends State<JDAddressDialog>
         itemBuilder: (context, index) => InkWell(
             child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
-                height: 48.0,
+                height: itemHeight,
                 alignment: Alignment.centerLeft,
                 child: Row(children: <Widget>[
                   Text(mList[index]["name"],
